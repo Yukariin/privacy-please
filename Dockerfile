@@ -4,7 +4,8 @@ WORKDIR /app
 
 RUN apk add --no-cache \
 	build-base \
-	git
+	curl \
+    git
 
 COPY . .
 
