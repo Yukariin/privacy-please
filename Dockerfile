@@ -34,8 +34,9 @@ FROM base
 # Copy application code
 COPY . .
 
-# Copy installed gems from the 'gems' stage
+# Copy built artifacts: gems, application
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
 
+# Start the application server
 EXPOSE 3000
 CMD ["./bin/rails", "server"]
